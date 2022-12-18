@@ -6,14 +6,13 @@
 // 17 -> такого числа в массиве нет
 void FindNumber(int[,] array, int number)
 {
-    
-    int result = 0;
+    int result = array[0,0];
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-        if(array[i,j] == number){result = number;break;}
-                }
+            if(array[i,j] == number){result = number;break;}
+        }
     }
     if(result == number){Console.WriteLine($"{result} -> такое число есть массиве");}
     else{Console.WriteLine($"{number} -> такого числа в массиве нет");}
