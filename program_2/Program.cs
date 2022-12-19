@@ -17,7 +17,6 @@ void FindNumber(int[,] array, int number)
             result[temp] = array[i,j];
             temp++;
             Console.Write($"{array[i, j]} ");
-            
         }
         Console.WriteLine("");
     }
