@@ -6,24 +6,35 @@
 // 17 -> такого числа в массиве нет
 void FindNumber(int[,] array, int number)
 {
-    int result = array[0,0];
+    int position = array.GetLength(0)*array.GetLength(1);
+    int temp = 0;
+    int [] result = new int [position];
     for (int i = 0; i < array.GetLength(0); i++)
     {
+        Console.WriteLine("");
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            if(array[i,j] == number){result = number;break;}
+            result[temp] = array[i,j];
+            temp++;
+            Console.Write($"{array[i, j]} ");
+            
         }
+        Console.WriteLine("");
     }
-    if(result == number){Console.WriteLine($"{result} -> такое число есть массиве");}
+    Console.Write("");
+    if(result.Length - 1 >= number){{Console.WriteLine($"{result[number]} -> такое число есть массиве");}    }
     else{Console.WriteLine($"{number} -> такого числа в массиве нет");}
-}
+    }
 int EnterNumber(string text)
 {
+    
     Console.Write(text);
     int result = int.Parse(Console.ReadLine());
     return result;
 }
-int number = EnterNumber("Ведите число которое хотите найти: ");
+int number = EnterNumber("Введите позицию элемента которую необходимо найти: ");
 int [,] array = {{1, 4, 7, 2},{5, 9, 2, 3},{8, 4, 2, 4}};
+
 FindNumber(array,number);
+
 
